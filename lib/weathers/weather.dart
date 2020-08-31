@@ -6,6 +6,8 @@ import 'package:flutter_blocs/weathers/repositories/weather_repository.dart';
 import 'cubit/weather_cubit.dart';
 
 class WeatherPage extends StatelessWidget {
+  static const String route = '/weather';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

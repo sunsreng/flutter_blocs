@@ -1,11 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blocs/counters/counter.dart';
+import 'package:flutter_blocs/settings/settings.dart';
+import 'package:flutter_blocs/weathers/weather.dart';
 
 class HomePage extends StatelessWidget {
+  static const String route = '/';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
+        actions: [
+          // action button
+          IconButton(
+            icon: const Icon(Icons.account_circle),
+            onPressed: () => print('click account'),
+          ),
+        ],
       ),
       body: const Center(
         child: Text('Center Home'),
@@ -14,8 +26,9 @@ class HomePage extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             buildDrawerHeader(context),
-            buildListTile(context, 'Counter', '/counter'),
-            buildListTile(context, 'Weather', '/weather'),
+            buildListTile(context, 'Counter', CounterPage.route),
+            buildListTile(context, 'Weather', WeatherPage.route),
+            buildListTile(context, 'Settings', SettingsPage.route),
           ],
         ),
       ),
